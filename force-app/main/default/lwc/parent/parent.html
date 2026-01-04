@@ -1,3 +1,6 @@
 <template>
-    <c-learning-lwc></c-learning-lwc>
+  <div class="slds-p-around_medium lgc-bg">
+            <lightning-input value={memberStatus} onchange={updateMemberStatus} type="text" label="Enter some text"></lightning-input>
+        </div>
+        <p>{memberStatus}</p>
 </template>
