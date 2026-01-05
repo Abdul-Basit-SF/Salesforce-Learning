@@ -1,4 +1,9 @@
 public with sharing class OpportunityTriggerHelper {
+    /*
+Problem: Update Account Last_Deal_Date__c with latest Closed Won Opportunity CloseDate
+Author: Abdul Basit
+Date: 2026-01-05
+*/
     public static void Helper(List<Opportunity> oppList) {
  //  Create a Map to track latest CloseDate per Account
     Map<Id, Date> accToLatestDate = new Map<Id, Date>();
