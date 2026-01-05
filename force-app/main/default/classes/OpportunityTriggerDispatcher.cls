@@ -11,10 +11,10 @@ public with sharing class OpportunityTriggerDispatcher {
 
     }
         WHEN After_Insert {
-           OpportunityTriggerHandler.handleAfterInsert(Trigger.new);
+           OpportunityTriggerHandler.handleAfterInsert((List<Opportunity>)Trigger.new);
     }
         WHEN After_Update {
-
+           OpportunityTriggerHandler.handleAfterUpdate((List<Opportunity>)Trigger.new);
     }
         WHEN After_Delete {
 

@@ -9,14 +9,11 @@ public with sharing class OpportunityTriggerHandler {
 
     }
     public static void handleAfterInsert(List<Opportunity> oppList) {
-       for(Opportunity opp : oppList){
-        if(opp.StageName == 'Closed won'){
-            
-        }
-       }
+     OpportunityTriggerHelper.Helper(oppList);
     }
-    public static void handleAfterUpdate() {
 
+    public static void handleAfterUpdate(List<Opportunity> oppList) {
+     OpportunityTriggerHelper.Helper(oppList);
     }
     public static void handleAfterDelete() {
 
