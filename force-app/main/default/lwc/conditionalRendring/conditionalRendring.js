@@ -4,10 +4,10 @@ export default class ConditionalRendring extends LightningElement {
     isLoggedIn = false;
     userName = 'Abdul Basit';
 
-    handleLogIn(){
+    handleLogIn(event){
         this.isLoggedIn = 'true';
     }
-    handleLogOut(){
-        this.isLoggedIn = 'False';
+    handleLogOut(event){
+        this.isLoggedIn = 'false';
     }
 }

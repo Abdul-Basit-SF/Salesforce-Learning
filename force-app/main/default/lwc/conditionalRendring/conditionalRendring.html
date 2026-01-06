@@ -12,7 +12,7 @@ If the user is not logged in → Show: "Please log in to continue." -->
         </template>
 
         <template if:true={isLoggedIn}>
-            <p>Welcome to Salesforce, userName</p>
+            <p>Welcome to Salesforce, {userName}</p><br>
             <button class="slds-button slds-button_destructive" onclick={handleLogOut}>Log out</button>
         </template>
 
