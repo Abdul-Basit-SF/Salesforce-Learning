@@ -1,0 +1,23 @@
+<template>
+    <!-- Scenario: User Login Status Message
+Description:
+You want to display a message based on whether a user is logged in or not.
+If the user is logged in → Show: "Welcome, [User Name]!"
+If the user is not logged in → Show: "Please log in to continue." -->
+
+    <div class="slds-card slds-p-around_medium">
+        <template if:false={isLoggedIn}>
+            <button class="slds-button slds-button_brand" onclick={handleLogIn}>Log in</button><br><br>
+            <p>Please log in to continue.</p>
+        </template>
+
+        <template if:true={isLoggedIn}>
+            <p>Welcome to Salesforce, userName</p>
+            <button class="slds-button slds-button_destructive" onclick={handleLogOut}>Log out</button>
+        </template>
+
+
+
+
+    </div>
+</template>
