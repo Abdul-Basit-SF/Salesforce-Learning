@@ -1,0 +1,13 @@
+<template>
+    <h1>Student and their courses</h1>
+    <template for:each={students} for:item="student">
+        <div key = {student.id}>
+            <strong>student.name</strong>
+            <ul>
+                <template for:each={student.courses} for:item="course">
+                    <li key = {course}>{course}</li>
+                </template>
+            </ul>
+        </div>
+    </template>
+</template>
