@@ -46,7 +46,7 @@ public with sharing class basicProblems {
         system.debug('Unique Names are: ' + uniqueNames);
     }
     
-    /* Problem 2: Check Value Existence
+    /* Problem 4: Check Value Existence
     Task:
         Create a Set<Integer> with some numbers.
         Check whether a given number exists in the set or not.
@@ -59,6 +59,29 @@ public with sharing class basicProblems {
             system.debug('Number exist in the set');
         }else{
             system.debug('Number does not exist');
+        }
+    }
+    
+    /*Problem 5: Store Student Marks
+    Task:
+        Create a Map<String, Integer> where:
+        Key = Student Name
+        Value = Marks
+        Add at least 5 students.
+        Print each student’s name along with their marks.
+        Concepts Covered:
+        Map basics, put(), iteration
+         */
+    public static void storeStudentMarks(){
+        Map<String,Integer> studentMarks = new Map<String,Integer>();
+        studentMarks.put('Maaz', 56);
+        studentMarks.put('Ikrash',40);
+        studentMarks.put('Furqan', 50);
+        studentMarks.put('Abdullah', 60);
+        studentMarks.put('Abdul Wahab', 55);
+        for(String studentNames : studentMarks.keySet()){
+            Integer marks = studentMarks.get(studentNames);
+            system.debug(studentNames + 'has marks ' + marks);
         }
     }
 }
