@@ -84,4 +84,59 @@ public with sharing class basicProblems {
             system.debug(studentNames + 'has marks ' + marks);
         }
     }
+    
+    /*Problem 6: Check Key Existence
+    Task:
+        Create a Map<String, String> that stores:
+        Key = Country Code
+        Value = Country Name
+        Check whether a given country code exists in the map.
+        Print a suitable message.
+        Concepts Covered:
+        containsKey(), conditional logic.
+         */
+    public static void checkKeyExist(String code){
+        Map<String,String> countryCode = new Map<String,String>();
+        countryCode.put('1234','Pakistan');
+        countryCode.put('5678','Afghanistan');
+        countryCode.put('910','Turkey');
+        countryCode.put('1112','Iran');
+        if(countryCode.containsKey(code)){
+            system.debug('Yes the code exist in the system');
+        }else{
+            system.debug('code does not exist in the system');
+        }
+    }
+    
+    /*Problem 7: Check Even or Odd
+    Task:
+        You are given an integer number.
+        Use if-else to check whether the number is even or odd.
+        Print a suitable message using System.debug().
+        Concepts Covered:
+        Basic if-else, modulus operator
+         */
+    public static void evenOrOdd(Integer Num){
+        if(Math.mod(Num, 2) == 0){
+            system.debug('The Number ' + Num + ' is Even');
+        }else{
+            system.debug('The Number ' + Num + ' is odd');
+        }
+    }
+    
+    /*Problem 8: User Login Status
+    Task:
+        You are given a Boolean variable isLoggedIn.
+        If the user is logged in, print "Welcome User".
+        Otherwise, print "Please login first".
+        Concepts Covered:
+        Boolean conditions, simple if-else
+         */
+    public static void loginStatus(String Name ,Boolean isLoggedIn){
+        if(isLoggedIn){
+            system.debug('Welcome ' + Name);
+        }else{
+            system.debug('Please login first');
+        }
+    }
 }
