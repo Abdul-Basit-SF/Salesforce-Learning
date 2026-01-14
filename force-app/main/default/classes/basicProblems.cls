@@ -139,4 +139,91 @@ public with sharing class basicProblems {
             system.debug('Please login first');
         }
     }
+    
+    /*Problem 9: Print Numbers from 1 to 10
+    Task:
+        Use a for loop to print numbers from 1 to 10 using System.debug().
+        Concepts Covered:
+        Basic for loop syntax
+         */
+    public static void printNumbers(){
+        for(Integer i=1; i<=10 ; i++){
+            system.debug(i);
+        }
+    }
+    
+    /*Problem 10: Sum of Numbers
+    Task:
+        Create a List<Integer> with some numbers.
+        Use a for loop to calculate the sum of all numbers in the list.
+        Print the total sum.
+        Concepts Covered:
+        for loop with List, accumulation logic
+         */
+    public static void sumOfListNum(List<Integer> numbers){
+        Integer sum = 0;
+        if(numbers == Null || numbers.isEmpty()){
+            system.debug('List is Empty');
+        }else{
+            for(Integer num : numbers){
+                sum = sum + num;
+            }
+            system.debug('The sum of List Numbers is: ' + sum);
+        }
+        
+    }
+    
+    /*Problem 11: Print Numbers from 1 to 10
+    Task:
+        Use a while loop to print numbers from 1 to 10 using System.debug().
+        Concepts Covered:
+        Basic while loop syntax
+         */
+    public static void printNumUsingWhile(){
+        Integer i = 1;
+        while(i<=10){
+            system.debug(i);
+            i++;
+        }
+    }
+    
+    /*Problem 12: Countdown Timer
+    Task:
+        You are given an integer value n.
+        Use a while loop to print a countdown from n to 1
+        Concepts Covered:
+        Loop condition control
+         */
+    public static void countdownTimer(Integer Num){
+        if(Num <=0){
+            system.debug('Number is invalid');
+        }else{
+            while(Num>=1){
+                system.debug(Num);
+                Num--;
+            }
+        }
+    }
+    
+    /*Problem 13: Fetch All Accounts
+    Task:
+        Write a SOQL query to fetch:
+        Id
+        Name
+        From the Account object.
+        Limit the result to 10 records.
+        Concepts Covered:
+        Basic SOQL, SELECT, LIMIT
+         */
+    public static void fetchAllAccount(){
+        List<Account> accList = [SELECT Id,Name FROM Account LIMIT 10];
+        if(accList.isEmpty() || accList.size()<=0){
+            system.debug('No account was found');
+        }else{
+            for(Account acc : accList){
+                system.debug('Id: ' + acc.id + ' Name: ' + acc.Name);
+            }
+        }
+        
+    }
 }
