@@ -101,13 +101,17 @@ export default class ZodiacSignMessenger extends LightningElement {
     }
 
     handleSubmit(){
-      const userMonth = this.userBirthDate.getMonth() + 1;
-      const userDate = this.userBirthDate.getDate();
+      let userDob = new Date(this.userBirthDate);
+      const userMonth = userDob.getMonth() + 1;
+      const userDate = userDob.getDate();
 
       this.checkZodiacSign(userMonth,userDate);
     }
 
     checkZodiacSign(month , day){
-
+      console.log('Data received ' + month + ' day ' + day);
+      for(let sign of this.zodiacTraits){
+        console.log('sign received ' + sign);
+      }
     }
 }

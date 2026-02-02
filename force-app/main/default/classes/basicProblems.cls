@@ -226,4 +226,26 @@ public with sharing class basicProblems {
         }
         
     }
+    
+    /*Problem 14: Fetch Contacts by Last Name
+    Task:
+        Write a SOQL query to fetch:
+        FirstName
+        LastName
+        Email
+        From Contact
+        Where LastName is equal to "Smith".
+        Concepts Covered:
+        WHERE clause, filtering */
+    public static void fetchContactsByLastName(String LastName){
+        List<Contact> conList = [SELECT id, FirstName,LastName,Email FROM Contact WHERE LastName=: LastName];
+        if(conList.size()<0 && conList.isEmpty()){
+            system.debug('List is Empty');
+        }else{
+            for(contact con : conList){
+                system.debug('First Name' + con.FirstName + 'Last Name' + con.LastName);
+            }
+        }
+    }
+    
 }
