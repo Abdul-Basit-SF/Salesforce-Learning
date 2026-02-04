@@ -236,7 +236,8 @@ public with sharing class basicProblems {
         From Contact
         Where LastName is equal to "Smith".
         Concepts Covered:
-        WHERE clause, filtering */
+        WHERE clause, filtering
+         */
     public static void fetchContactsByLastName(String LastName){
         List<Contact> conList = [SELECT id, FirstName,LastName,Email FROM Contact WHERE LastName=: LastName];
         if(conList.size()<0 && conList.isEmpty()){
@@ -245,6 +246,49 @@ public with sharing class basicProblems {
             for(contact con : conList){
                 system.debug('First Name' + con.FirstName + 'Last Name' + con.LastName);
             }
+        }
+    }
+    
+    /*Problem 15: Insert New Accounts
+    Task:
+        Create at least 3 Account records in Apex.
+        Insert them using a single DML statement.
+        Print a success message after insertion.
+        Concepts Covered:
+        insert, basic DML usage
+         */
+    public static void insertNewAccount(){
+        List<Account> accList = new List<Account>();
+        accList.add(new Account(Name = 'Acme Corporation'));
+        accList.add(new Account(Name = 'Universal Services'));
+        accList.add(new Account(Name = 'Pioneer Solutions'));
+        try{
+            insert accList;
+            System.debug(accList.size() + ' Account(s) inserted successfully.');
+        } catch (DmlException e){
+            System.debug('Failed to insert accounts: ' + e.getMessage());
+        }
+    }
+    
+    /*Problem 16: Update Account Industry
+    Task:
+        Fetch an existing Account record.
+        Update its Industry field to "Technology".
+        Perform the update using DML.
+        Concepts Covered:
+        update, record modification
+         */
+    public static void updateAccountIndustry(){
+        List<Account> acc = [SELECT id,Name FROM Account WHERE Industry='Education'];
+        for(Account a : acc){
+            a.Industry = 'Technology';
+        }
+        try {
+            if(!accList.isEmpty()){
+                update accList;
+            }
+        } catch(DmlException e){
+            System.debug('Error updating Accounts: ' + e.getMessage());
         }
     }
     
