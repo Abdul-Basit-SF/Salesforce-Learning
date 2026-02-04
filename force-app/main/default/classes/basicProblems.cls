@@ -284,8 +284,8 @@ public with sharing class basicProblems {
             a.Industry = 'Technology';
         }
         try {
-            if(!accList.isEmpty()){
-                update accList;
+            if(!acc.isEmpty()){
+                update acc;
             }
         } catch(DmlException e){
             System.debug('Error updating Accounts: ' + e.getMessage());
