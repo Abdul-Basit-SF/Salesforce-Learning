@@ -6,5 +6,6 @@
     "**/.sfdx": true
   },
   "xml.preferences.showSchemaDocumentationType": "none",
-  "salesforcedx-vscode-slds.enhancements.autoSuggest": false
+  "salesforcedx-vscode-slds.enhancements.autoSuggest": false,
+  "salesforcedx-vscode-apex.java.home": "C:\\Program Files\\Java\\jdk-25"
 }
