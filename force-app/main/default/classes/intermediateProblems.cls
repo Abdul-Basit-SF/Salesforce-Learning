@@ -35,11 +35,19 @@ public with sharing class intermediateProblems {
         }
         system.debug('Second Highest Number in List is: ' + secondHigestNum);
     }
-    public static void runMyTest() { // 3. Method 2 shuru
-        List<Integer> testList = new List<Integer>{10, 5, 20, 20, 15};
-        secondHighestNumber(testList);
-        RemoveDuplicateNumbers(testList);
-        intermediateProblems.runMyTest();
-    }
+
+    /*Problem 3: Common Elements Between Two Sets
+    Task:
+        Create two different Set<Integer> objects.
+        Find and print the common elements between both sets.
+        Restriction:
+        Do not convert the sets into lists.
+         */
+        public static void commonElementsBetweenTwoSets(Set<Integer> set01 , Set<Integer> set02){
+          Set<Integer> commonElements = new Set<Integer>(set01);
+          commonElements.retainAll(set02);
+          system.debug('Common Element in set 01 and set 02 is: '+commonElements);
+          
+        }
     
 }
