@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Conditional Rendring">
+        <div class="slds-p-around_small">
+            <input type="checkbox" name="display message" onchange={handleCheckboxChange}/>
+            <p lwc:if={displayMessage}>Welcome to the Salesforce journey!</p>
+            <p lwc:else>Click the checkbox to display the message.</p>
+        </div>
+        </lightning-card>
+        <lightning-card title="List of Mentors">
+        <div class="slds-p-around_small">
+            <p key={Mentor.id} for:each={Mentor} for:item="Mentor">
+                {Mentor.name}
+            </p>
+        </div>
+    </lightning-card>
+</template>
